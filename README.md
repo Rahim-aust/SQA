@@ -40,16 +40,16 @@ Welcome to the Software Quality Assurance (SQA) GitHub repository! This reposito
 
 ### Manual Testing
 - **Test Case Writing:**
-  Access examples and templates for effective test case writing. [Link to Test Case Writing Section](#)
+  Access examples and templates for effective test case writing. [Link to Test Case Writing Section](https://github.com/Rahim-aust/SQA/tree/master/Test%20Case%20Writings)
 
 - **Load Testing Using JMeter:**
   Resources on performing load testing using JMeter. [Link to JMeter Load Testing Section](#)
 
 - **API Testing Using Postman:**
-  Tutorials and best practices for API testing using Postman. [Link to Postman API Testing Section](#)
+  Tutorials and best practices for API testing using Postman. [Link to Postman API Testing Section](https://github.com/Rahim-aust/SQA/tree/master/API%20Testing)
 
 ### Automatic Testing
 - **Web Automation Testing:**
-  Explore examples and frameworks for web automation testing. [Link to Web Automation Testing Section](#)
+  Explore examples and frameworks for web automation testing. [Link to Web Automation Testing Section](https://github.com/Rahim-aust/SQA/tree/master/Test%20AutoMation)
 
 Feel free to navigate through this repository to enhance your SQA skills and explore practical examples. Whether you're a seasoned professional or just starting, there's valuable content for everyone!
