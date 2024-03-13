@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2024-03-14T02:11:57 BDT" name="Default suite" finished-at="2024-03-14T02:13:46 BDT" duration-ms="108374">
+    <groups>
+    </groups>
+    <test started-at="2024-03-14T02:11:57 BDT" name="Default test" finished-at="2024-03-14T02:13:46 BDT" duration-ms="108374">
+      <class name="com.sqa.TestAppAutomation.App">
+        <test-method is-config="true" signature="setDevice()[pri:0, instance:com.sqa.TestAppAutomation.App@47af7f3d]" started-at="2024-03-14T02:11:57 BDT" name="setDevice" finished-at="2024-03-14T02:12:11 BDT" duration-ms="13482" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setDevice -->
+        <test-method signature="app_test_1()[pri:1, instance:com.sqa.TestAppAutomation.App@47af7f3d]" started-at="2024-03-14T02:12:11 BDT" name="app_test_1" finished-at="2024-03-14T02:12:55 BDT" duration-ms="43687" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- app_test_1 -->
+        <test-method signature="app_test_2()[pri:2, instance:com.sqa.TestAppAutomation.App@47af7f3d]" started-at="2024-03-14T02:12:55 BDT" name="app_test_2" finished-at="2024-03-14T02:13:44 BDT" duration-ms="49301" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- app_test_2 -->
+        <test-method is-config="true" signature="closeApp()[pri:0, instance:com.sqa.TestAppAutomation.App@47af7f3d]" started-at="2024-03-14T02:13:44 BDT" name="closeApp" finished-at="2024-03-14T02:13:46 BDT" duration-ms="1778" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeApp -->
+      </class> <!-- com.sqa.TestAppAutomation.App -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>
