@@ -17,6 +17,7 @@ import io.appium.java_client.android.AndroidDriver;
 public class App 
 {
 	public AndroidDriver driver;
+	String resourceId, className, xPath, toFind;
 	
 	@BeforeTest
 	public void setDevice( ) throws MalformedURLException {
@@ -41,14 +42,14 @@ public class App
 		driver.findElement(By.id("com.nopstation.nopcommerce.nopstationcart:id/btnAccept")).click();
 		Thread.sleep(1000);
 		
-		String recyclerClass = "androidx.recyclerview.widget.RecyclerView";
-		String recyclerResource = "com.nopstation.nopcommerce.nopstationcart:id/tvProductName";
-		String toFind = "Electronics";
+		className = "androidx.recyclerview.widget.RecyclerView";
+		resourceId = "com.nopstation.nopcommerce.nopstationcart:id/tvProductName";
+		toFind = "Electronics";
 
-		driver.findElement(AppiumBy.androidUIAutomator("new UiScrollable(new UiSelector().scrollable(true).className(\"" + recyclerClass + "\")).setAsHorizontalList().scrollIntoView(new UiSelector().resourceId(\"" + recyclerResource + "\").text(\"" + toFind + "\"))"));
+		driver.findElement(AppiumBy.androidUIAutomator("new UiScrollable(new UiSelector().scrollable(true).className(\"" + className + "\")).setAsHorizontalList().scrollIntoView(new UiSelector().resourceId(\"" + resourceId + "\").text(\"" + toFind + "\"))"));
 		
-		String xpth = "//android.widget.TextView[@resource-id=\"com.nopstation.nopcommerce.nopstationcart:id/tvProductName\" and @text=\"Electronics\"]";
-		driver.findElement(By.xpath(xpth)).click();
+		xPath = "//android.widget.TextView[@resource-id=\"com.nopstation.nopcommerce.nopstationcart:id/tvProductName\" and @text=\"Electronics\"]";
+		driver.findElement(By.xpath(xPath)).click();
 		Thread.sleep(1000);
 		
 		toFind = "Mattress Bedroom";
@@ -85,8 +86,9 @@ public class App
 		driver.findElement(By.id("com.nopstation.nopcommerce.nopstationcart:id/etEmail")).sendKeys("testmail@gmail.com");
 		Thread.sleep(1000);
 		
-		String clsName = "android.widget.Spinner";
-		driver.findElement(AppiumBy.androidUIAutomator("new UiScrollable(new UiSelector().scrollable(true).className(\"" + clsName + "\")).scrollIntoView(new UiSelector().text(\"Albania\"))")).click();		
+		toFind = "Albania";
+		className = "android.widget.Spinner";
+		driver.findElement(AppiumBy.androidUIAutomator("new UiScrollable(new UiSelector().scrollable(true).className(\"" + className + "\")).scrollIntoView(new UiSelector().text(\"" + toFind + "\"))")).click();		
 		Thread.sleep(1000);
 		
 		driver.findElement(By.id("com.nopstation.nopcommerce.nopstationcart:id/etCompanyName")).sendKeys("Test Company");
@@ -95,7 +97,7 @@ public class App
 		driver.findElement(By.id("com.nopstation.nopcommerce.nopstationcart:id/etCity")).sendKeys("Test City");
 		Thread.sleep(1000);
 		
-		String toFind = "CONTINUE";
+		toFind = "CONTINUE";
         driver.findElement(AppiumBy.androidUIAutomator("new UiScrollable(new UiSelector().scrollable(true)).scrollIntoView(new UiSelector().text(\"" + toFind + "\"))"));
 		
 		driver.findElement(By.id("com.nopstation.nopcommerce.nopstationcart:id/etStreetAddress")).sendKeys("Test Street 1");
@@ -115,7 +117,45 @@ public class App
 		
 		driver.findElement(By.id("com.nopstation.nopcommerce.nopstationcart:id/btnContinue")).click();
 		Thread.sleep(1000);
+		
+		resourceId = "com.nopstation.nopcommerce.nopstationcart:id/tvShippingMethodDescription";
+		driver.findElement(AppiumBy.androidUIAutomator("new UiSelector().resourceId(\"" + resourceId + "\").instance(2)")).click();	
+		Thread.sleep(1000);
+		
+		driver.findElement(AppiumBy.androidUIAutomator("new UiScrollable(new UiSelector().scrollable(true).instance(0)).flingToEnd(1000)"));
+		Thread.sleep(1000);
+		
+		resourceId = "com.nopstation.nopcommerce.nopstationcart:id/btnContinue";
+		driver.findElement(By.id("com.nopstation.nopcommerce.nopstationcart:id/btnContinue")).click();
+		
+		driver.findElement(AppiumBy.androidUIAutomator("new UiScrollable(new UiSelector().scrollable(true).instance(0)).flingToEnd(1000)"));
+		
+		resourceId = "com.nopstation.nopcommerce.nopstationcart:id/tvPaymentMethodName";
+		className = "android.widget.RelativeLayout";
+		toFind = "Check / Money Order";
+		
+		driver.findElement(AppiumBy.androidUIAutomator("new UiScrollable(new UiSelector().scrollable(true).className(\"" + className + "\")).scrollIntoView(new UiSelector().resourceId(\"" + resourceId + "\").text(\"" + toFind + "\"))")).click();;
 
+		Thread.sleep(1000);
+		
+		driver.findElement(By.id("com.nopstation.nopcommerce.nopstationcart:id/btnContinue")).click();
+		Thread.sleep(3000);
+
+		className = "android.widget.Button";
+		
+		driver.findElement(AppiumBy.androidUIAutomator("new UiSelector().className(\"" + className + "\")")).click();	
+		Thread.sleep(1000);
+
+		driver.findElement(By.id("com.nopstation.nopcommerce.nopstationcart:id/btnContinue")).click();
+		Thread.sleep(100000);      
+		
+		String msgVerify = driver.findElement(By.id("com.nopstation.nopcommerce.nopstationcart:id/md_text_message")).getText();
+		Thread.sleep(1000);
+		
+		if(msgVerify.contains("Your order has been successfully processed!"))
+			System.out.println("Verified successfully");
+
+		Thread.sleep(2000);
 	}
 	
 	@AfterTest
